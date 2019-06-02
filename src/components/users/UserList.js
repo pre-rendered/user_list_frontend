@@ -4,7 +4,7 @@ import { Table } from '@material-ui/core'
 import UserItem from './UserItem'
 import SortableTableHead from '../table/SortableTableHead'
 
-const UserList = ({ users, deleteUser, toggleSortFn, stableSort }) => {
+const UserList = ({ users, deleteUser, toggleSortFn, tableSort }) => {
   const [order, setOrder] = React.useState('asc')
   const [orderBy, setOrderBy] = React.useState('name')
 
@@ -15,7 +15,7 @@ const UserList = ({ users, deleteUser, toggleSortFn, stableSort }) => {
   }
 
   return (
-    <Table style={{'max-width': 250}}>
+    <Table style={{maxWidth: 250}}>
       <SortableTableHead
         order={order}
         orderBy={orderBy}
@@ -25,7 +25,7 @@ const UserList = ({ users, deleteUser, toggleSortFn, stableSort }) => {
         deleteUser={deleteUser}
         order={order}
         orderBy={orderBy}
-        stableSort={stableSort}
+        tableSort={tableSort}
         toggleSortFn={toggleSortFn} />
     </Table>
   )
@@ -35,7 +35,7 @@ UserList.propTypes = {
   users: PropTypes.array,
   deleteUser: PropTypes.func,
   getSorting: PropTypes.func,
-  stableSort: PropTypes.func,
+  tableSort: PropTypes.func,
 }
 
 export default UserList
