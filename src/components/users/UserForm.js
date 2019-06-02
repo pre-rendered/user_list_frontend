@@ -17,7 +17,7 @@ const UserForm = ({ validateForm }) => {
   return (
     <form
       className="form--add-user"
-      onSubmit={validateForm.bind(this, values, setValues)}
+      onSubmit={validateForm.bind(this, values)}
     >
       <TextField
         id="outlined-name"

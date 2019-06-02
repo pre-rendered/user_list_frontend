@@ -13,7 +13,7 @@ class App extends Component {
     }
   }
 
-  validateForm = (newUser, setValues, e) => {
+  validateForm = (newUser, e) => {
     e.preventDefault()
     const zipcodeExpression = new RegExp('^[0-9]{5}')
     const isValidZipcode = zipcodeExpression.test(parseInt(newUser.zipcode, 10))
