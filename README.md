@@ -1,6 +1,6 @@
 # Preqrequisites
 ## Node.js
-Go to the [node.js](https://nodejs.org/en/) homepage and download the latest LTS version of Node.js (version 10.16.0 as of this writing)
+Go to the [node.js](https://nodejs.org/en/) homepage and download and install the latest LTS version of Node.js (version 10.16.0 as of this writing)
 
 # How to run
 After getting the [server code](https://github.com/StraylightSky/user_list_backend) to run, navigate to this project's root directory and run:
