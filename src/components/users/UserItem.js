@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 import { IconButton, TableBody, TableCell, TableRow } from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete'
 
-const UserItem = ({ users, deleteUser, order, orderBy, tableSort, toggleSortFn }) => {
+const UserItem = ({ users, deleteUser, order, orderBy, stableSort, toggleSortFn }) => {
   const deleteHandler = userId => () => {
     deleteUser(userId)
   }
 
   return (
     <TableBody>
-      {tableSort(users, toggleSortFn(order, orderBy))
+      {stableSort(users, toggleSortFn(order, orderBy))
         .map((user, index) => (
           <TableRow key={`userItem-${index}`}>
             <TableCell>{user.name}</TableCell>
@@ -38,7 +38,7 @@ UserItem.propTypes = {
   deletUser: PropTypes.func,
   order: PropTypes.string,
   orderBy: PropTypes.string,
-  tableSort: PropTypes.func,
+  stableSort: PropTypes.func,
   getSorting: PropTypes.func,
 }
 

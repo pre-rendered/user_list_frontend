@@ -81,8 +81,8 @@ class App extends Component {
     }
     return 0
   }
-  
-  tableSort(array, cmp) {
+
+  stableSort(array, cmp) {
     const stabilizedThis = array.map((el, index) => [el, index])
     stabilizedThis.sort((a, b) => {
       const order = cmp(a[0], b[0])
@@ -116,7 +116,7 @@ class App extends Component {
           <UserList
             users={this.state.users}
             deleteUser={this.deleteUser}
-            tableSort={this.tableSort}
+            stableSort={this.stableSort}
             toggleSortFn={this.toggleSortFn}
           />
         </Grid>
