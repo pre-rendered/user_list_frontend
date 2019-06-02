@@ -40,18 +40,27 @@ class App extends Component {
   addUser = (user) => {
     const nextId = this.state.users.length + 1
     const data = { id: nextId, ...user }
-    axios.post(uri, data).then(updatedUsersList => {
+    axios.post(uri, data).then(newUser => {
+      let updatedUsersList = this.state.users
+      updatedUsersList.push(newUser.data)
       this.setState({
-        users: updatedUsersList.data
+        users: updatedUsersList
       })
+    })
+    .catch(error => {
+      console.log(error.message)
     })
   }
 
   deleteUser = (id) => {
-    axios.delete(`${uri}/${id}`).then(updatedUsersList => {
+    axios.delete(`${uri}/${id}`).then(() => {
+      const updatedUsersList = this.state.users.filter(user => user.id !== parseInt(id, 10))
       this.setState({
-        users: updatedUsersList.data
+        users: updatedUsersList
       })
+    })
+    .catch(error => {
+      console.log(error.message)
     })
   }
 
@@ -102,7 +111,7 @@ class App extends Component {
           />
         </Grid>
 
-        <Grid item xs={12} sm={6}>
+        <Grid item sm={6}>
           <h1>User List</h1>
           <UserList
             users={this.state.users}

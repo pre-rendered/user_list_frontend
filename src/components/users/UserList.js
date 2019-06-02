@@ -15,7 +15,7 @@ const UserList = ({ users, deleteUser, toggleSortFn, stableSort }) => {
   }
 
   return (
-    <Table>
+    <Table style={{'max-width': 250}}>
       <SortableTableHead
         order={order}
         orderBy={orderBy}
