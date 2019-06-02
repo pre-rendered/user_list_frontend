@@ -15,13 +15,13 @@ Then navigate to [http://localhost:3000](http://localhost:3000)
 - Only a 5 digit number is allowed for zipcode
 - Unique constraints on email addresses
 - You should be able to sort by each column
-- Order should be maintained after sorting then deleting an item
 
 # Approach
 - Used create-react-app to get up and running quickly
 - Wanted to use React's hooks in some way
 - Original sorting was done on name only, but I wanted to find a more robust way to sort by every column
 - Decided to go with in-memory storage for the list of users since it would be faster than setting up sqlite
+- Decided not to prompt the user to confirm on delete; UX didn't feel quite right with it in place
 
 # Callouts
 ## Sorting
